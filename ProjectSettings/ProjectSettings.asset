@@ -713,10 +713,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 69848551-6f83-4b42-a770-84d31cb9509c
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: TriplanoRunner
+  organizationId: dicous-br
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

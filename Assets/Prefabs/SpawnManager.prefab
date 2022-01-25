@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2606725269579939058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2606725269579939056}
+  - component: {fileID: 2606725269579939059}
+  - component: {fileID: 2606725269579939057}
+  - component: {fileID: 3940921092993380758}
+  - component: {fileID: 939970159}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2606725269579939056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606725269579939058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2606725269579939059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606725269579939058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a4ce1fb8469b243a76ce73068d5adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformPrefab: {fileID: 5804626475493880475, guid: 51ae8fa5b06c5094fb416414c26876bf,
+    type: 3}
+  target: {fileID: 0}
+  totalPlatform: 8
+  distanceBetweenPlatforms: 24
+  depthInitial: 44
+--- !u!114 &2606725269579939057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606725269579939058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0f353360589e94bb1e619f71040d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionToSpawnHorizontal:
+  - -4
+  - 0
+  - 4
+  obstaclesPool:
+  - tag: pizza
+    prefab: {fileID: 4395621022662070584, guid: a698ac594a9c18348947e91a38db331d,
+      type: 3}
+  - tag: cliente
+    prefab: {fileID: 84764358855145673, guid: a0f6efeb48440654e99518a25a2e0ae4, type: 3}
+  spaceToSpawn: 100
+  maxDistanceWalkingToSpawn: 20
+  target: {fileID: 0}
+  checkItemLayer:
+    serializedVersion: 2
+    m_Bits: 768
+--- !u!114 &3940921092993380758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606725269579939058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0f353360589e94bb1e619f71040d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionToSpawnHorizontal:
+  - -4
+  - 0
+  - 4
+  obstaclesPool:
+  - tag: warningSign
+    prefab: {fileID: 6550490381056734240, guid: ae9139d47368e614bb5586091e391646,
+      type: 3}
+  - tag: cone
+    prefab: {fileID: 4811133094601531886, guid: 569e8db21b18aa04c902372810a98f0b,
+      type: 3}
+  - tag: bigCone
+    prefab: {fileID: 9220814206858433931, guid: 3f79421762125514f9a992f1b6bbff3d,
+      type: 3}
+  spaceToSpawn: 100
+  maxDistanceWalkingToSpawn: 30
+  target: {fileID: 0}
+  checkItemLayer:
+    serializedVersion: 2
+    m_Bits: 768
+--- !u!114 &939970159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606725269579939058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0f353360589e94bb1e619f71040d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionToSpawnHorizontal:
+  - -4
+  - 0
+  - 4
+  obstaclesPool:
+  - tag: bus
+    prefab: {fileID: 5105117730173583338, guid: e22d3c54ec799ba4eb8c459051e0a2e6,
+      type: 3}
+  - tag: carGreen
+    prefab: {fileID: 1141049871570361145, guid: 32d7303046df79743b90a1cc3520a5ff,
+      type: 3}
+  - tag: carRed
+    prefab: {fileID: 6534459062235664226, guid: 69df0bba258b4e946b93ee3c319a1748,
+      type: 3}
+  spaceToSpawn: 100
+  maxDistanceWalkingToSpawn: 30
+  target: {fileID: 0}
+  checkItemLayer:
+    serializedVersion: 2
+    m_Bits: 768
