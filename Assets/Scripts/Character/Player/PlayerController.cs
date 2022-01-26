@@ -1,4 +1,5 @@
 using UnityEngine;
+using EndlessRunner.ScriptableObjects.Events;
 using EndlessRunner.Utils;
 
 namespace EndlessRunner.Character.Player
@@ -10,18 +11,21 @@ namespace EndlessRunner.Character.Player
         private Rigidbody rb;
         private RayDetector checkGround;
         private Transform playerTransform;
+        [SerializeField] private IntEvent onAddPizza = default;
+        [SerializeField] private IntEvent onRemovePizza = default;
+        [SerializeField] private GameEvent onPizzaDelivered = default;
 
         [Header("Player Settings")]
         [SerializeField] private float moveSpeedHorizontal = 0.7f;
         [SerializeField] private float moveSpeedForward = 0.3f;
-        [SerializeField] private float jumpForce = 6;
-        [SerializeField] private bool isGround;
+        [SerializeField] private float jumpForce = 12;
+        private bool isGround = false;
 
         [Header("Line Settings")]
         [SerializeField] private int lineCurrent = 2;
-        private int lineTotal = 3;
+        private const int lineTotal = 3;
         [SerializeField] private float distanceBetweenLines = 4;
-        private float moveXPositionTarget;
+        private float moveXPositionTarget = 0;
 
         private void Awake() 
         {
@@ -104,6 +108,20 @@ namespace EndlessRunner.Character.Player
             else if(lineCurrent == 3)
             {
                 moveXPositionTarget = distanceBetweenLines;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other) 
+        {
+            if(other.CompareTag("pizza"))
+            {
+                onAddPizza.Raise(1);
+                other.gameObject.SetActive(false);
+            }
+
+            if(other.CompareTag("cliente"))
+            {
+                onPizzaDelivered.Raise();
             }
         }
     }

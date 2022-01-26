@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 389f964db704f054c98ce5ed69f43e58
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onCoinCollect: {fileID: 11400000, guid: 2d2f2f53ed0c076498b244230876c546, type: 2}
+  - onPizzaChange: {fileID: 11400000, guid: af4733ac505e1f7419c2649a9e546e16, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

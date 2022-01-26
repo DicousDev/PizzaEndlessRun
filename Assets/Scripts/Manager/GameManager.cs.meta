@@ -1,12 +1,17 @@
 fileFormatVersion: 2
-guid: e80bf141707a45f4ca32145b99e70953
+guid: c941ee694a3659c4b9649b136022669f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - onCoinCollect: {fileID: 11400000, guid: 2d2f2f53ed0c076498b244230876c546, type: 2}
+  - onCoinChange: {fileID: 11400000, guid: fdba6aff160e8454f85d649cce8b36be, type: 2}
   - onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
   - onRemovePizza: {fileID: 11400000, guid: 1b9d4863e9ce4524c8284d07a3acbd6f, type: 2}
+  - onPizzaChange: {fileID: 11400000, guid: af4733ac505e1f7419c2649a9e546e16, type: 2}
   - onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
+  - onPizzaDeliveredChange: {fileID: 11400000, guid: 83c4b44e2cdadb846bf03863f6fa367e,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

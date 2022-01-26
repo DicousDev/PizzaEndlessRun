@@ -6,6 +6,9 @@ TagManager:
   tags:
   - pizza
   - cliente
+  - coinText
+  - pizzaText
+  - pizzaDeliveredText
   layers:
   - Default
   - TransparentFX

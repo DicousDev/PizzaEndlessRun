@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1694695843}
   m_Layer: 0
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,10 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80bf141707a45f4ca32145b99e70953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
+  onRemovePizza: {fileID: 11400000, guid: 1b9d4863e9ce4524c8284d07a3acbd6f, type: 2}
+  onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
   moveSpeedHorizontal: 0.7
   moveSpeedForward: 0.3
   jumpForce: 12
-  isGround: 0
   lineCurrent: 2
   distanceBetweenLines: 4
 --- !u!114 &1694695843
