@@ -16,6 +16,7 @@ namespace EndlessRunner.Character.Player
         [SerializeField] private GameEvent onPizzaDelivered = default;
 
         [Header("Player Settings")]
+        [SerializeField] private Animator playerAnimator;
         [SerializeField] private float moveSpeedHorizontal = 0.7f;
         [SerializeField] private float moveSpeedForward = 0.3f;
         [SerializeField] private float jumpForce = 12;
@@ -26,6 +27,9 @@ namespace EndlessRunner.Character.Player
         private const int lineTotal = 3;
         [SerializeField] private float distanceBetweenLines = 4;
         private float moveXPositionTarget = 0;
+        private const string animatorParameterIsGround = "IsGround";
+        private const string animatorParameterJumpTrigger = "Jump";
+        private const string animatorParameterVelocityVertical = "VelocityVertical";
 
         private void Awake() 
         {
@@ -36,6 +40,7 @@ namespace EndlessRunner.Character.Player
 
         private void Update()
         {
+            playerAnimator.SetFloat(animatorParameterVelocityVertical, rb.velocity.y);
             if(Input.GetKeyDown(KeyCode.A) && CanMoveLeft())
             {
                 lineCurrent -= 1;
@@ -56,6 +61,7 @@ namespace EndlessRunner.Character.Player
         private void FixedUpdate()
         {
             isGround = checkGround.collisionDetected;
+            playerAnimator.SetBool(animatorParameterIsGround, isGround);
             MoveHorizontal();
             MoveToForward();
         }
@@ -75,6 +81,7 @@ namespace EndlessRunner.Character.Player
 
         private void Jump()
         {
+            playerAnimator.SetTrigger(animatorParameterJumpTrigger);
             Vector3 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;

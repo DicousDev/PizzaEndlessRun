@@ -10,7 +10,7 @@ namespace EndlessRunner.Manager
         [SerializeField] private IntEvent onCoinChange = default;
 
 
-        private static int pizzas = 0;
+        private int pizzas = 0;
         [SerializeField] private IntEvent onAddPizza = default;
         [SerializeField] private IntEvent onRemovePizza = default;
         [SerializeField] private IntEvent onPizzaChange = default;
@@ -19,11 +19,6 @@ namespace EndlessRunner.Manager
         private int pizzasDelivered = 0;
         [SerializeField] private GameEvent onPizzaDelivered = default;
         [SerializeField] private IntEvent onPizzaDeliveredChange = default;
-
-        public static int GetPizza()
-        {
-            return pizzas;
-        }
 
         private void OnEnable() 
         {
