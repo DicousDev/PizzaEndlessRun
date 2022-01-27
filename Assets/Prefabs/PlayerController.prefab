@@ -116,6 +116,9 @@ MonoBehaviour:
   jumpForce: 12
   lineCurrent: 2
   distanceBetweenLines: 4
+  maximumTimeForValidateMovimentTouch: 0.5
+  distanceTouchHorizontal: 100
+  distanceTouchVertical: 60
 --- !u!114 &1694695843
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -363,12 +363,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1503503752}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1117557136 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3156612609415569285, guid: 511caae4ee379fb45a5faaab8efd0053,
-    type: 3}
-  m_PrefabInstance: {fileID: 303783049872935210}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1503503752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -622,26 +616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerController
-      objectReference: {fileID: 0}
-    - target: {fileID: 303783051567368329, guid: 511caae4ee379fb45a5faaab8efd0053,
-        type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 1117557136}
-    - target: {fileID: 303783051567368329, guid: 511caae4ee379fb45a5faaab8efd0053,
-        type: 3}
-      propertyPath: moveSpeedForward
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 303783051567368334, guid: 511caae4ee379fb45a5faaab8efd0053,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 303783051567368334, guid: 511caae4ee379fb45a5faaab8efd0053,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 303783051567368335, guid: 511caae4ee379fb45a5faaab8efd0053,
         type: 3}

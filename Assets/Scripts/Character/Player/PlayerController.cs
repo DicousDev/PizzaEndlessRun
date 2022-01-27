@@ -1,6 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using EndlessRunner.ScriptableObjects.Events;
 using EndlessRunner.Utils;
+using EndlessRunner.Character.Player.Input.Keyboard;
+using EndlessRunner.Character.Player.Input.Mobile;
 
 namespace EndlessRunner.Character.Player
 {
@@ -27,32 +30,64 @@ namespace EndlessRunner.Character.Player
         private const int lineTotal = 3;
         [SerializeField] private float distanceBetweenLines = 4;
         private float moveXPositionTarget = 0;
+
+        // Animator Parameters
         private const string animatorParameterIsGround = "IsGround";
         private const string animatorParameterJumpTrigger = "Jump";
         private const string animatorParameterVelocityVertical = "VelocityVertical";
 
+
+        [Header("Touch Settings")]
+        [SerializeField] private float maximumTimeForValidateMovimentTouch = 0.5f;
+        private Vector2 startTouchPosition;
+        private Vector2 directionTouch;
+        [SerializeField] private float distanceTouchHorizontal = 100;
+        [SerializeField] private float distanceTouchVertical = 60;
+
+        // Input
+        private PlayerKeyboardInputAction playerKeyboardInput;
+        private PlayerMobileInputAction playerMobileInput;
+
+        private void OnEnable() 
+        {
+            playerKeyboardInput.Enable();
+            playerMobileInput.Enable();
+        }
+
+        private void OnDisable() 
+        {
+            playerKeyboardInput.Disable();
+            playerMobileInput.Disable();
+        }
+
         private void Awake() 
         {
+            playerKeyboardInput = new PlayerKeyboardInputAction();
+            playerMobileInput = new PlayerMobileInputAction();
             playerTransform = this.transform;
             rb = GetComponent<Rigidbody>();
             checkGround = GetComponent<RayDetector>();
         }
 
+        private void Start() 
+        {
+            playerMobileInput.Touch.TouchPress.started += ctx => StartTouch(ctx);
+            playerMobileInput.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
+        }
+
         private void Update()
         {
             playerAnimator.SetFloat(animatorParameterVelocityVertical, rb.velocity.y);
-            if(Input.GetKeyDown(KeyCode.A) && CanMoveLeft())
+            if(CanMoveLeftInput())
             {
-                lineCurrent -= 1;
-                SetMovePositionTarget();
+                MoveLeft();
             }
-            else if(Input.GetKeyDown(KeyCode.D) && CanMoveRight())
+            else if(CanMoveRightInput())
             {
-                lineCurrent += 1;
-                SetMovePositionTarget();
+                MoveRight();
             }
 
-            if(Input.GetKeyDown(KeyCode.Space) && CanJump())
+            if(CanJumpInput())
             {
                 Jump();
             }
@@ -64,6 +99,35 @@ namespace EndlessRunner.Character.Player
             playerAnimator.SetBool(animatorParameterIsGround, isGround);
             MoveHorizontal();
             MoveToForward();
+        }
+
+        private void StartTouch(InputAction.CallbackContext context)
+        {
+            startTouchPosition = playerMobileInput.Touch.TouchPosition.ReadValue<Vector2>();
+        }
+
+        private void EndTouch(InputAction.CallbackContext context)
+        {
+            double duration = context.time - context.startTime;
+            if(duration >= maximumTimeForValidateMovimentTouch) return;
+
+            Vector2 endTouchPosition = playerMobileInput.Touch.TouchPosition.ReadValue<Vector2>();
+            directionTouch = endTouchPosition - startTouchPosition;
+
+            if(CanMoveLeftMobile())
+            {
+                MoveLeft();
+            }
+            else if(CanMoveRightMobile())
+            {
+                MoveRight();
+            }
+            else if(CanJumpMobile())
+            {
+                Jump();
+            }
+
+            directionTouch = Vector2.zero;
         }
 
         private void MoveToForward()
@@ -79,12 +143,63 @@ namespace EndlessRunner.Character.Player
             rb.MovePosition(move);
         }
 
+        private void MoveLeft()
+        {
+            if(CanMoveLeft())
+            {
+                lineCurrent -= 1;
+                SetMovePositionTarget();
+            }
+        }
+
+        private void MoveRight()
+        {
+            if(CanMoveRight())
+            {
+                lineCurrent += 1;
+                SetMovePositionTarget();
+            }
+        }
+
         private void Jump()
         {
-            playerAnimator.SetTrigger(animatorParameterJumpTrigger);
-            Vector3 velocity = rb.velocity;
-            velocity.y = jumpForce;
-            rb.velocity = velocity;
+            if(CanJump())
+            {
+                playerAnimator.SetTrigger(animatorParameterJumpTrigger);
+                Vector3 velocity = rb.velocity;
+                velocity.y = jumpForce;
+                rb.velocity = velocity;
+            }
+        }
+
+        private bool CanMoveLeftMobile()
+        {
+            return directionTouch.x <= -distanceTouchHorizontal && Mathf.Abs(directionTouch.x) > directionTouch.y;
+        }
+
+        private bool CanMoveRightMobile()
+        {
+            return directionTouch.x >= distanceTouchHorizontal && directionTouch.x > directionTouch.y;
+        }
+
+        private bool CanJumpMobile()
+        {
+            return directionTouch.y >= distanceTouchVertical && directionTouch.y > directionTouch.x;
+        }
+
+        private bool CanMoveLeftInput()
+        {
+            return playerKeyboardInput.PlayerActions.MoveLeft.triggered;
+        }
+
+        private bool CanMoveRightInput()
+        {
+            return playerKeyboardInput.PlayerActions.MoveRight.triggered;
+        }
+
+        private bool CanJumpInput()
+        {
+            return playerKeyboardInput.PlayerActions.Jump.triggered;
         }
 
         private bool CanMoveLeft()
