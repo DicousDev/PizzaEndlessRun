@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 303783051567368332}
   - component: {fileID: 303783051567368334}
   - component: {fileID: 350270461}
+  - component: {fileID: 8012731244649970948}
   - component: {fileID: 350270459}
   - component: {fileID: 3398742912882331233}
   - component: {fileID: 350270465}
@@ -113,8 +114,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineStart: 2
-  moveSpeedForward: 0
-  moveSpeedHorizontal: 0.7
+  moveSpeed: 0.7
+--- !u!114 &8012731244649970948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33804096ea15fa74aa92341b9ea10609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
 --- !u!114 &350270459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
-  onRemovePizza: {fileID: 11400000, guid: 1b9d4863e9ce4524c8284d07a3acbd6f, type: 2}
   onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
 --- !u!114 &350270465
 MonoBehaviour:

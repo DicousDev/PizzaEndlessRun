@@ -5,14 +5,13 @@ using EndlessRunner.Utils;
 namespace EndlessRunner.Character.Player.Movement
 {
     [RequireComponent(typeof(Rigidbody))]
-    public sealed class PlayerMovement : MonoBehaviour , IMovementLine
+    public sealed class PlayerMovementLine : MonoBehaviour , IMovementLine
     {
         private Rigidbody rb;
         private Transform playerTransform;
         private LineMovement line;
         [SerializeField] private int lineStart = 2;
-        [SerializeField] private float moveSpeedForward = 0.3f;
-        [SerializeField] private float moveSpeedHorizontal = 0.7f;
+        [SerializeField] private float moveSpeed = 0.7f;
         private Vector3 targetPosition;
 
         private void Awake()
@@ -24,25 +23,16 @@ namespace EndlessRunner.Character.Player.Movement
 
         private void Start() => SetTargetPosition();
 
-        private void FixedUpdate() 
-        {
-            MoveHorizontal();
-            MoveToForward();
-        }
+        private void FixedUpdate() => MoveHorizontal();
 
         public void MoveToLineLeft() => line.MoveLeft();
 
         public void MoveToLineRight() => line.MoveRight();
 
-        private void MoveToForward()
-        {
-            rb.MovePosition(rb.position + Vector3.forward * moveSpeedForward);
-        }
-
         private void MoveHorizontal()
         {            
             SetTargetPosition();
-            Vector3 move = Vector3.MoveTowards(playerTransform.position, targetPosition, moveSpeedHorizontal);
+            Vector3 move = Vector3.MoveTowards(playerTransform.position, targetPosition, moveSpeed);
             rb.MovePosition(move);
         }
 
