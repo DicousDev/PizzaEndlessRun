@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using EndlessRunner.Utils;
 
 namespace EndlessRunner.Spawner.Obstacles 
 {
     public sealed class SpawnObstacles : MonoBehaviour
     {
-        [SerializeField] private float[] positionToSpawnHorizontal = new float[3] {-4, 0, 4};
+        private LineMovement lineMovement;
         [SerializeField] private ObstaclePool[] obstaclesPool;
         private Dictionary<string, List<GameObject>> obstaclesDictionary = new Dictionary<string, List<GameObject>>();
-        [SerializeField] private float spaceToSpawn = 50;
+        [SerializeField] private float distanceToSpawn = 50;
         private Vector3 distanceWalking;
         [SerializeField] private float maxDistanceWalkingToSpawn = 50;
         [SerializeField] private Transform target;
@@ -17,6 +18,7 @@ namespace EndlessRunner.Spawner.Obstacles
 
         private void Awake() 
         {
+            lineMovement = new LineMovement();
             GameObject parentGameObject = new GameObject("SpawnObstacles");
             parent = parentGameObject.transform;
         }
@@ -133,8 +135,8 @@ namespace EndlessRunner.Spawner.Obstacles
 
         private Vector3 CalculateSpawnPosition()
         {
-            float randomHorizontal = positionToSpawnHorizontal[Random.Range(0, positionToSpawnHorizontal.Length)];
-            Vector3 position = new Vector3(randomHorizontal, 1, target.position.z + spaceToSpawn);
+            lineMovement.RandomLinePosition();
+            Vector3 position = new Vector3(lineMovement.linePositionCurrent, 1, target.position.z + distanceToSpawn);
             return position;
         }
 

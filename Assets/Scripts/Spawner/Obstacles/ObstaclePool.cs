@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace EndlessRunner.Spawner.Obstacles 
 {
-    [System.Serializable]
+    [Serializable]
     public sealed class ObstaclePool
     {
         public string tag;

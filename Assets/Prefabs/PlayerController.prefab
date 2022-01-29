@@ -41,12 +41,12 @@ GameObject:
   - component: {fileID: 303783051567368335}
   - component: {fileID: 303783051567368332}
   - component: {fileID: 303783051567368334}
+  - component: {fileID: 7088088690397970829}
   - component: {fileID: 350270461}
-  - component: {fileID: 8012731244649970948}
   - component: {fileID: 350270459}
   - component: {fileID: 3398742912882331233}
   - component: {fileID: 350270465}
-  - component: {fileID: 350270466}
+  - component: {fileID: 8592745380443493174}
   - component: {fileID: 350270460}
   - component: {fileID: 1694695843}
   m_Layer: 0
@@ -101,6 +101,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &7088088690397970829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33804096ea15fa74aa92341b9ea10609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.3
 --- !u!114 &350270461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,21 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7fb0c567559af4b958f1df80ed40b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineStart: 2
+  lineStart: 1
   moveSpeed: 0.7
---- !u!114 &8012731244649970948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303783051567368328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33804096ea15fa74aa92341b9ea10609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
 --- !u!114 &350270459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,14 +168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
---- !u!114 &350270466
+--- !u!114 &8592745380443493174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303783051567368328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16ab14693256a264395382bcfc7bf927, type: 3}
   m_Name: 

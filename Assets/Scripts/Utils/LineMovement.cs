@@ -1,61 +1,64 @@
-﻿namespace EndlessRunner.Utils
+﻿using UnityEngine;
+
+namespace EndlessRunner.Utils
 {
     public sealed class LineMovement
     {
-        private int lineCurrent;
-        private const int lineTotal = 3;
-        private const int lineMinimun = 1;
-        private const float distanceBetweenLines = 4;
-        public float linePosition = 0;
+        private int indexLineCurrent;
+        private int lineTotal;
+        private readonly int[] linesPosition = new int[3] {-4, 0, 4};
+        public float linePositionCurrent = 0;
 
-        public LineMovement(int lineCurrent)
+        public LineMovement(int indexLine)
         {
-            SetLineCurrent(lineCurrent);
+            lineTotal = linesPosition.Length;
+            SetIndexLine(indexLine);
+        }
+
+        public LineMovement()
+        {
+            lineTotal = linesPosition.Length;
+            RandomLinePosition();
         }
 
         public void MoveLeft()
         {
-            SetLineCurrent(lineCurrent - 1);
+            SetIndexLine(indexLineCurrent - 1);
         }
 
         public void MoveRight()
         {
-            SetLineCurrent(lineCurrent + 1);
+            SetIndexLine(indexLineCurrent + 1);
         }
 
-        private void SetLineCurrent(int line)
+        public void RandomLinePosition()
         {
-            lineCurrent = line;
+            int randomLine = Random.Range(0, lineTotal);
+            SetIndexLine(randomLine);
+        }
+
+        private void SetIndexLine(int index)
+        {
+            indexLineCurrent = index;
             CheckLineLimit();
             SetLinePosition();
         }
 
         private void CheckLineLimit()
         {
-            if(lineCurrent <= lineMinimun)
+            if(indexLineCurrent < 0)
             {
-                lineCurrent = lineMinimun;
+                indexLineCurrent = 0;
             }
-            else if(lineCurrent > lineTotal)
+            else if(indexLineCurrent >= lineTotal)
             {
-                lineCurrent = lineTotal;
+                indexLineCurrent = lineTotal - 1;
             }
         }
 
         private void SetLinePosition()
         {
-            if(lineCurrent == 1)
-            {
-                linePosition = -distanceBetweenLines;
-            }
-            else if(lineCurrent == 2)
-            {
-                linePosition = 0;
-            }
-            else if(lineCurrent == 3)
-            {
-                linePosition = distanceBetweenLines;
-            }
+            linePositionCurrent = linesPosition[indexLineCurrent];
         }
     }
 }

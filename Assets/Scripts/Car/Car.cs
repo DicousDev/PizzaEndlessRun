@@ -9,6 +9,7 @@ namespace EndlessRunner.Car
     {
         private MoveForward move;
         private RayDetector detectorCollision;
+        private bool isCollisionInFront = false;
 
         private void OnEnable() 
         {
@@ -23,7 +24,8 @@ namespace EndlessRunner.Car
 
         private void Update()
         {
-            if(detectorCollision.collisionDetected)
+            isCollisionInFront = detectorCollision.collisionDetected;
+            if(isCollisionInFront)
             {
                 detectorCollision.enabled = false;
             }

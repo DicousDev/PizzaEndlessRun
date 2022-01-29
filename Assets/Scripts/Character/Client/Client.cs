@@ -7,8 +7,8 @@ namespace EndlessRunner.Character.Client
     {
         [SerializeField] private IntEvent onCoinCollect = default;
         [SerializeField] private IntEvent onPizzaChange = default;
-        [SerializeField] private int coinMin = 20;
-        [SerializeField] private int coinMax = 50;
+        [SerializeField] private int coinMinimum = 20;
+        [SerializeField] private int coinMaximum = 50;
         private int pizzas = 0;
 
         private void OnEnable() 
@@ -28,7 +28,7 @@ namespace EndlessRunner.Character.Client
 
         private int GetRandomCoin()
         {
-            int coin = Random.Range(coinMin, coinMax);
+            int coin = Random.Range(coinMinimum, coinMaximum);
             return coin;
         }
 

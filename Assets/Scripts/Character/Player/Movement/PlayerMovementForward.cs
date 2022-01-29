@@ -8,12 +8,12 @@ namespace EndlessRunner.Character.Player.Movement
         private Rigidbody rb;
         [SerializeField] private float moveSpeed = 0.3f;
 
-        void Awake()
+        private void Awake()
         {
             rb = GetComponent<Rigidbody>();
         }
 
-        void FixedUpdate() => Move();
+        private void FixedUpdate() => Move();
 
         private void Move()
         {

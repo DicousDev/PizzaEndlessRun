@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace EndlessRunner.Interfaces.Detection
+﻿namespace EndlessRunner.Interfaces.Detection
 {
     public interface IDetector
     {

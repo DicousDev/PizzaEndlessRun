@@ -10,7 +10,7 @@ namespace EndlessRunner.Character.Player.Movement
         private Rigidbody rb;
         private Transform playerTransform;
         private LineMovement line;
-        [SerializeField] private int lineStart = 2;
+        [SerializeField] private int lineStart = 1;
         [SerializeField] private float moveSpeed = 0.7f;
         private Vector3 targetPosition;
 
@@ -33,13 +33,15 @@ namespace EndlessRunner.Character.Player.Movement
         {            
             SetTargetPosition();
             Vector3 move = Vector3.MoveTowards(playerTransform.position, targetPosition, moveSpeed);
+            move.y = rb.position.y;
+            move.z = rb.position.z;
             rb.MovePosition(move);
         }
 
         private void SetTargetPosition()
         {
             targetPosition = playerTransform.position;
-            targetPosition.x = line.linePosition;
+            targetPosition.x = line.linePositionCurrent;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace EndlessRunner.Camera
         private void LateUpdate()
         {
             Vector3 newPosition = target.position - startDirection; 
-            transform.position = new Vector3(0, newPosition.y, newPosition.z);
+            cameraTransform.position = new Vector3(0, newPosition.y, newPosition.z);
         }
     }
 }
