@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using EndlessRunner.Interfaces.Detection;
 
 namespace EndlessRunner.Utils
 {
-    public class RayDetector : MonoBehaviour
+    public class RayDetector : MonoBehaviour , IDetector 
     {
         private enum DirectionState {Forward, Down}
         [SerializeField] private DirectionState directionState;
@@ -46,6 +47,11 @@ namespace EndlessRunner.Utils
             {
                 collisionDetected = Physics.Raycast(checkPoint.position, directionRay, distance, layerMask);
             }
+        }
+
+        public bool GetDetection()
+        {
+            return collisionDetected;
         }
 
         private void OnDrawGizmos() 

@@ -41,7 +41,12 @@ GameObject:
   - component: {fileID: 303783051567368335}
   - component: {fileID: 303783051567368332}
   - component: {fileID: 303783051567368334}
-  - component: {fileID: 303783051567368329}
+  - component: {fileID: 350270461}
+  - component: {fileID: 350270459}
+  - component: {fileID: 3398742912882331233}
+  - component: {fileID: 350270465}
+  - component: {fileID: 350270466}
+  - component: {fileID: 350270460}
   - component: {fileID: 1694695843}
   m_Layer: 0
   m_Name: PlayerController
@@ -95,7 +100,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &303783051567368329
+--- !u!114 &350270461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,21 +109,83 @@ MonoBehaviour:
   m_GameObject: {fileID: 303783051567368328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80bf141707a45f4ca32145b99e70953, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b7fb0c567559af4b958f1df80ed40b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineStart: 2
+  moveSpeedForward: 0
+  moveSpeedHorizontal: 0.7
+--- !u!114 &350270459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801cb6fb13a94f4ea09a38b123d6261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 12
+--- !u!114 &3398742912882331233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107fd6772fab275488d47aa5cd89a8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
   onRemovePizza: {fileID: 11400000, guid: 1b9d4863e9ce4524c8284d07a3acbd6f, type: 2}
   onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
-  playerAnimator: {fileID: 3156612609415569285}
-  moveSpeedHorizontal: 0.7
-  moveSpeedForward: 0.3
-  jumpForce: 12
-  lineCurrent: 2
-  distanceBetweenLines: 4
+--- !u!114 &350270465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b445aabfea0096489f0b49faf57e0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
+--- !u!114 &350270466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ab14693256a264395382bcfc7bf927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
   maximumTimeForValidateMovimentTouch: 0.5
   distanceTouchHorizontal: 100
   distanceTouchVertical: 60
+--- !u!114 &350270460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a78bf30e5aaa364a82f49b4a463264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 3156612609415569285}
+  onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
 --- !u!114 &1694695843
 MonoBehaviour:
   m_ObjectHideFlags: 0

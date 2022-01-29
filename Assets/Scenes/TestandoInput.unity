@@ -478,11 +478,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
-    - target: {fileID: 303783051567368329, guid: 511caae4ee379fb45a5faaab8efd0053,
-        type: 3}
-      propertyPath: moveSpeedForward
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 303783051567368335, guid: 511caae4ee379fb45a5faaab8efd0053,
         type: 3}
       propertyPath: m_RootOrder
