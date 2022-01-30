@@ -90,8 +90,8 @@ GameObject:
   - component: {fileID: 8471962069139380724}
   - component: {fileID: 8471962069139380725}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_Name: MaximumPizzaDeliveredText
+  m_TagString: maximumPizzaDeliveredText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 8471962069668029409}
   m_Layer: 5
   m_Name: PlayAgainButton
-  m_TagString: Untagged
+  m_TagString: playAgainButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,8 +608,8 @@ GameObject:
   - component: {fileID: 8471962070358010801}
   - component: {fileID: 8471962070358010802}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: PizzaDeliveredGameOverText
+  m_TagString: pizzaDeliveredGameOverText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 8471962070940114397}
   m_Layer: 5
   m_Name: BackToMenuButton
-  m_TagString: Untagged
+  m_TagString: quitToMenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

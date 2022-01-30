@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
   onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
+  onGameOver: {fileID: 11400000, guid: c1e158c10eb822f4aaae75dd7a23675c, type: 2}
 --- !u!114 &350270465
 MonoBehaviour:
   m_ObjectHideFlags: 0

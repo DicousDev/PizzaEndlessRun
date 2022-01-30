@@ -12,6 +12,9 @@ MonoImporter:
   - onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
   - onPizzaDeliveredChange: {fileID: 11400000, guid: 83c4b44e2cdadb846bf03863f6fa367e,
       type: 2}
+  - onPizzaDeliveredMaximumChange: {fileID: 11400000, guid: cc4a830b22804b84da6324a7f61adbf7,
+      type: 2}
+  - onGameOver: {fileID: 11400000, guid: c1e158c10eb822f4aaae75dd7a23675c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

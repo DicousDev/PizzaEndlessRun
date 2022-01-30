@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 107fd6772fab275488d47aa5cd89a8e1
+guid: e05086fca1c93d943b21140e5ed332ae
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
-  - onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
   - onGameOver: {fileID: 11400000, guid: c1e158c10eb822f4aaae75dd7a23675c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

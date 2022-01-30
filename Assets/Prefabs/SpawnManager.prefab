@@ -64,17 +64,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0f353360589e94bb1e619f71040d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionToSpawnHorizontal:
-  - -4
-  - 0
-  - 4
   obstaclesPool:
   - tag: pizza
     prefab: {fileID: 4395621022662070584, guid: a698ac594a9c18348947e91a38db331d,
       type: 3}
   - tag: cliente
     prefab: {fileID: 84764358855145673, guid: a0f6efeb48440654e99518a25a2e0ae4, type: 3}
-  spaceToSpawn: 100
+  distanceToSpawn: 100
   maxDistanceWalkingToSpawn: 20
   target: {fileID: 0}
   checkItemLayer:
@@ -92,10 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0f353360589e94bb1e619f71040d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionToSpawnHorizontal:
-  - -4
-  - 0
-  - 4
   obstaclesPool:
   - tag: warningSign
     prefab: {fileID: 6550490381056734240, guid: ae9139d47368e614bb5586091e391646,
@@ -106,7 +98,7 @@ MonoBehaviour:
   - tag: bigCone
     prefab: {fileID: 9220814206858433931, guid: 3f79421762125514f9a992f1b6bbff3d,
       type: 3}
-  spaceToSpawn: 100
+  distanceToSpawn: 100
   maxDistanceWalkingToSpawn: 30
   target: {fileID: 0}
   checkItemLayer:
@@ -124,10 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0f353360589e94bb1e619f71040d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionToSpawnHorizontal:
-  - -4
-  - 0
-  - 4
   obstaclesPool:
   - tag: bus
     prefab: {fileID: 5105117730173583338, guid: e22d3c54ec799ba4eb8c459051e0a2e6,
@@ -138,7 +126,7 @@ MonoBehaviour:
   - tag: carRed
     prefab: {fileID: 6534459062235664226, guid: 69df0bba258b4e946b93ee3c319a1748,
       type: 3}
-  spaceToSpawn: 100
+  distanceToSpawn: 100
   maxDistanceWalkingToSpawn: 30
   target: {fileID: 0}
   checkItemLayer:

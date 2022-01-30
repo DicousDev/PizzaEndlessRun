@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6550490381050087428}
   m_Layer: 8
   m_Name: warning_sign
-  m_TagString: Untagged
+  m_TagString: gameOver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

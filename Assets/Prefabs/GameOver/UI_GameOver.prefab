@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2758512938495797121
+--- !u!1 &6482928459963232544
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2758512938495797120}
-  - component: {fileID: 2758512938495797123}
+  - component: {fileID: 6482928459963232546}
+  - component: {fileID: 6482928459963232545}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: UI_GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2758512938495797120
+--- !u!4 &6482928459963232546
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2758512938495797121}
+  m_GameObject: {fileID: 6482928459963232544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,26 +31,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2758512938495797123
+--- !u!114 &6482928459963232545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2758512938495797121}
+  m_GameObject: {fileID: 6482928459963232544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c941ee694a3659c4b9649b136022669f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ef4bcd027eee324c8bfa8eff265f9b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onCoinCollect: {fileID: 11400000, guid: 2d2f2f53ed0c076498b244230876c546, type: 2}
-  onCoinChange: {fileID: 11400000, guid: fdba6aff160e8454f85d649cce8b36be, type: 2}
-  onAddPizza: {fileID: 11400000, guid: 8be535c6988a79848a8806d1a2b1a5e1, type: 2}
-  onRemovePizza: {fileID: 11400000, guid: 1b9d4863e9ce4524c8284d07a3acbd6f, type: 2}
-  onPizzaChange: {fileID: 11400000, guid: af4733ac505e1f7419c2649a9e546e16, type: 2}
-  onPizzaDelivered: {fileID: 11400000, guid: 4a45dc70b22be154e9023498670a01aa, type: 2}
   onPizzaDeliveredChange: {fileID: 11400000, guid: 83c4b44e2cdadb846bf03863f6fa367e,
     type: 2}
   onPizzaDeliveredMaximumChange: {fileID: 11400000, guid: cc4a830b22804b84da6324a7f61adbf7,
     type: 2}
   onGameOver: {fileID: 11400000, guid: c1e158c10eb822f4aaae75dd7a23675c, type: 2}
+  onRestartGame: {fileID: 11400000, guid: f21ef33d961695644a2316e788380950, type: 2}
+  onBackToMenu: {fileID: 11400000, guid: 54a9defb0ea800a4db73e69e255650c8, type: 2}
+  panelGameOver: {fileID: 0}

@@ -9,6 +9,11 @@ TagManager:
   - coinText
   - pizzaText
   - pizzaDeliveredText
+  - gameOver
+  - pizzaDeliveredGameOverText
+  - playAgainButton
+  - quitToMenuButton
+  - maximumPizzaDeliveredText
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using EndlessRunner.Utils;
 using EndlessRunner.ScriptableObjects.Events;
 
 namespace EndlessRunner.Manager
@@ -19,6 +20,9 @@ namespace EndlessRunner.Manager
         private int pizzasDelivered = 0;
         [SerializeField] private GameEvent onPizzaDelivered = default;
         [SerializeField] private IntEvent onPizzaDeliveredChange = default;
+        [SerializeField] private IntEvent onPizzaDeliveredMaximumChange = default;
+
+        [SerializeField] private GameEvent onGameOver = default;
 
         private void OnEnable() 
         {
@@ -26,6 +30,7 @@ namespace EndlessRunner.Manager
             onAddPizza.onInt += AddPizza;
             onRemovePizza.onInt += RemovePizza;
             onPizzaDelivered.onGameListener += DeliveredPizza;
+            onGameOver.onGameListener += GameOver;
         }
 
         private void OnDisable() 
@@ -34,6 +39,7 @@ namespace EndlessRunner.Manager
             onAddPizza.onInt -= AddPizza;
             onRemovePizza.onInt -= RemovePizza;
             onPizzaDelivered.onGameListener -= DeliveredPizza;
+            onGameOver.onGameListener -= GameOver;
         }
 
         private void Start() 
@@ -79,6 +85,25 @@ namespace EndlessRunner.Manager
 
             RemovePizza(1);
             AddPizzaDelivered(1);
+        }
+
+        private void GameOver()
+        {
+            SaveGameStats();
+        }
+
+        private void SaveGameStats()
+        {
+            GameStatsData data = SaveGame.Load();
+
+            data.coin += coin;
+            if(pizzasDelivered > data.pizzaDeliveredMaximum)
+            {
+                data.pizzaDeliveredMaximum = pizzasDelivered;
+            }
+
+            onPizzaDeliveredMaximumChange.Raise(data.pizzaDeliveredMaximum);
+            SaveGame.Save(data);
         }
     }
 }

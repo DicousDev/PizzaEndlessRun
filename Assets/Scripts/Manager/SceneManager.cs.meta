@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d861889b41291e346be2915d76926003
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onMenuToGame: {fileID: 11400000, guid: 3e04bdd08efaecf4dbf4d0ce226d9712, type: 2}
+  - onRestartGame: {fileID: 11400000, guid: f21ef33d961695644a2316e788380950, type: 2}
+  - onBackToMenu: {fileID: 11400000, guid: 54a9defb0ea800a4db73e69e255650c8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
