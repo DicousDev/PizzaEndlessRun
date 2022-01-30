@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using TMPro;
 using EndlessRunner.ScriptableObjects.Events;
-using EndlessRunner.Utils;
 
 namespace EndlessRunner.UI.GameOver
 {

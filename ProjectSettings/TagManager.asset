@@ -14,6 +14,8 @@ TagManager:
   - playAgainButton
   - quitToMenuButton
   - maximumPizzaDeliveredText
+  - playGame
+  - quitGame
   layers:
   - Default
   - TransparentFX

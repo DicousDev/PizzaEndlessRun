@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace EndlessRunner.Utils
+﻿namespace EndlessRunner.Utils
 {
     public sealed class GameStatsData
     {
