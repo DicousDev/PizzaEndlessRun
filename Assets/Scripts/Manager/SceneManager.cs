@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using EndlessRunner.Utils;
 using EndlessRunner.ScriptableObjects.Events;
 
 namespace EndlessRunner.Manager
@@ -6,9 +8,24 @@ namespace EndlessRunner.Manager
     public sealed class SceneManager : MonoBehaviour
     {
         private enum SceneGame { Menu = 0, Game = 1 };
+        public static SceneManager instance;
         [SerializeField] private GameEvent onMenuToGame = default;
         [SerializeField] private GameEvent onRestartGame = default;
         [SerializeField] private GameEvent onBackToMenu = default;
+        [SerializeField] private Fade fade;
+
+        private void Awake() 
+        {
+            if(instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
 
         private void OnEnable() 
         {
@@ -26,25 +43,37 @@ namespace EndlessRunner.Manager
 
         private void ToGame()
         {
-            ChangeScene(SceneGame.Game);
+            StartCoroutine(ChangeScene(SceneGame.Game));
         }
 
         private void RestartScene()
         {
-            Time.timeScale = 1;
-            ChangeScene(SceneGame.Game);
+            StartCoroutine(ChangeScene(SceneGame.Game));
         }
 
         private void ToMenu()
         {
-            Time.timeScale = 1;
-            ChangeScene(SceneGame.Menu);
+            StartCoroutine(ChangeScene(SceneGame.Menu));
         }
 
-        private void ChangeScene(SceneGame scene)
+        private IEnumerator ChangeScene(SceneGame scene)
         {
             int index = (int)scene;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+            yield return StartCoroutine(LoadSceneAsync(index));
+            Time.timeScale = 1;
+        }
+
+        private IEnumerator LoadSceneAsync(int index)
+        {
+            yield return StartCoroutine(fade.FadeIn());
+            AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(index);
+            
+            while(operation.isDone == false)
+            {
+                yield return null;
+            }
+
+            yield return StartCoroutine(fade.FadeOut());
         }
     }
 }
