@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e0c5881280ce04846aadd6f930490739
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - musicSource: {instanceID: 0}
+  - sfxSource: {instanceID: 0}
+  - onAudioSfx: {fileID: 11400000, guid: 9f00068a3760b5a4eb99db8acad73499, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 350270465}
   - component: {fileID: 8592745380443493174}
   - component: {fileID: 350270460}
+  - component: {fileID: 3357635985317748557}
   - component: {fileID: 1694695843}
   m_Layer: 0
   m_Name: PlayerController
@@ -199,6 +200,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 3156612609415569285}
   onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
+--- !u!114 &3357635985317748557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303783051567368328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca624bce486c6b24ebd2f0eb98af95bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
+  onAudioSfx: {fileID: 11400000, guid: 9f00068a3760b5a4eb99db8acad73499, type: 2}
+  jumpSfx: {fileID: 8300000, guid: b43f12ee1f89d94478e989be6200a549, type: 3}
 --- !u!114 &1694695843
 MonoBehaviour:
   m_ObjectHideFlags: 0

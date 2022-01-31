@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ca624bce486c6b24ebd2f0eb98af95bd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onPlayerIsJump: {fileID: 11400000, guid: 6a3fd4a2fa20e384bb3052c5f04b77db, type: 2}
+  - onAudioSfx: {fileID: 11400000, guid: 9f00068a3760b5a4eb99db8acad73499, type: 2}
+  - jumpSfx: {fileID: 8300000, guid: b43f12ee1f89d94478e989be6200a549, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
