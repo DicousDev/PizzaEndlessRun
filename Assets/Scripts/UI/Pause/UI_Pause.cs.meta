@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 282d1cc5a9af86942bd253a792413c28
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onGamePaused: {fileID: 11400000, guid: 07cb000a808f7bd41bf38ee0f6d00c5b, type: 2}
+  - onResumeGame: {fileID: 11400000, guid: 3be95b337d6c3934b82544d8fe2868d1, type: 2}
+  - panelPause: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

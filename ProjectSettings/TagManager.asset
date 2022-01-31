@@ -16,6 +16,8 @@ TagManager:
   - maximumPizzaDeliveredText
   - playGame
   - quitGame
+  - pauseButton
+  - resumeButton
   layers:
   - Default
   - TransparentFX

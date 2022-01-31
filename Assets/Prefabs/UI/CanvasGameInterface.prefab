@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 1569690457399422570}
   m_Layer: 5
   m_Name: PauseButton
-  m_TagString: Untagged
+  m_TagString: pauseButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -887,11 +887,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PausePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366769123159183874, guid: 48b0e04b26070d54586f5e81bbb59909,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b0e04b26070d54586f5e81bbb59909, type: 3}

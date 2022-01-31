@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7130796338490807406}
   m_Layer: 5
   m_Name: ResumeButton
-  m_TagString: Untagged
+  m_TagString: resumeButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4850321891773070203
 RectTransform:
   m_ObjectHideFlags: 0
